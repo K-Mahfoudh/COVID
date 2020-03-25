@@ -1,0 +1,5 @@
+  $(function() {
+          $.scrollify({
+            section : ".section",
+          });
+        });
