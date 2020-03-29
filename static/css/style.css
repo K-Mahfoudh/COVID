@@ -75,9 +75,7 @@ align-items: center;
 	justify-content: center;
 	align-items: center;
 }
-.stat-row{
-	width: 96%;
-}
+
 .container-fluid{
 	margin:0px !important ;
 	padding: 0px !important;
