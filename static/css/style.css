@@ -1,12 +1,72 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap');
 body, html{
 	margin: 0px;
 	padding:0px;
 	height: 100%;
 	background-color: white;
 	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
 }
 
+
+/**background images*/
+
+
+#header{
+	background: url('../images/header-background.png') scroll no-repeat;
+	background-size: cover;
+	color: white;
+	position: relative;
+}
+#header::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#world-stat{
+		background: url('../images/world-bg.png') scroll no-repeat;
+	background-size: cover;
+	color: white;
+	position: relative;
+}
+
+#world-stat::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#dz-stat{
+	background: url('../images/dz-bg.png') scroll no-repeat;
+	background-size: 100% 100%;
+	color: white;
+	position: relative;
+}
+
+#dz-stat::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
 
 /* block style*/
 
@@ -87,10 +147,14 @@ align-items: center;
 
 .impair{
 	background-color: #800000;
+
 }
 
 .pair{
 	background-color: #500000;
+-webkit-box-shadow: inset 46px 55px 90px -45px rgba(0,0,0,1);
+-moz-box-shadow: inset 46px 55px 90px -45px rgba(0,0,0,1);
+box-shadow: inset 46px 55px 90px -45px rgba(0,0,0,1);
 }
 
 .top-navbar{
@@ -109,12 +173,12 @@ align-items: center;
 
 /*text style*/
 .title{
-	font-size: calc(2em + 2.5vw);
+	font-size: calc(2.3em + 2.5vw);
 	font-weight:bolder;
 }
 
 .sub-title{
-	font-size: calc(1.4em + 1.5vw);
+	font-size: calc(1.6em + 2vw);
 	font-weight: bolder;
 	display: block;
 	
@@ -132,9 +196,6 @@ align-items: center;
 /********************/
 
 @media only screen and (max-width: 801px){
-	.stat-row{
-		width: 100%;
-	}
 	.side-nav{
 		display: none;
 	}

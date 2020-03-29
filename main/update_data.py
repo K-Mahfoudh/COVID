@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 from collections import OrderedDict
 import json
+import sys
 
 url='https://www.worldometers.info/coronavirus/'
 
@@ -29,5 +30,6 @@ def main():
     for value_index in range(len(dz_values)):
         world_values['column_{}'.format(value_index)] = dz_values[value_index].text
     world_values['World Active'] = "{:,}".format(int(world_values['Coronavirus Cases'].replace(',','')) - (int((world_values['Recovered'].replace(',',''))) + int(world_values['Deaths'].replace(',',''))))
+    
     return world_values
 

@@ -14,14 +14,13 @@ $(function() {
         });
   	
 function main(){
-	
-  	ajaxCall();
+	ajaxCall();
+  	repeat = setInterval(ajaxCall,30000);
   }
 $(document).ready(main);
 
 
 function ajaxCall(){
-
   	$.ajax({
   		method: 'GET',
   		url: url,
