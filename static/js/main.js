@@ -1,6 +1,7 @@
 
 
 function main(){
+
 	ajaxCall();
   	repeat = setInterval(ajaxCall,30000);
 
@@ -15,6 +16,7 @@ $(function() {
         });
 
 function ajaxCall(){
+	
 	url = 'http://127.0.0.1:8000/update/'
 	total_dz = $('#total-dz');
 	total_world = $('#total-world') ;
@@ -24,6 +26,7 @@ function ajaxCall(){
 	recovered_world = $('#recover-world');
 	death_dz = $('#death-dz');
 	death_world = $('#death-world');
+
 	
   	$.ajax({
   		method: 'GET',
@@ -45,88 +48,20 @@ function ajaxCall(){
   		}
   	})
 
-
-  	/*var http = new XMLHttpRequest();
-  	http.open('GET',url);
-  	http.onload = function(){
-  		alert(http.responseText);
-  	}
-  	http.send();*/
   }
 
 /**
  * Prevention Section
  */
-
-const one = document.querySelector('.one');
-const two = document.querySelector('.two');
-const three = document.querySelector('.three');
-const four = document.querySelector('.four');
-
-/**
- * Section One
- */
-one.addEventListener("mouseenter", () => {
-	one.classList.add("maximize");
-	two.classList.add("minimize");
-	three.classList.add("minimize");
-	four.classList.add("minimize");
+split_element = $('.split');
+split_element.mouseenter(function(){
+		$(this).addClass('col-md-6').removeClass('col-md-3');
+		$(this).siblings().addClass('col-md-2').removeClass('col-md-3');
 });
 
-one.addEventListener("mouseleave", () => {
-	one.classList.remove("maximize");
-	two.classList.remove("minimize");
-	three.classList.remove("minimize");
-	four.classList.remove("minimize");
+split_element.mouseleave(function(){
+	$(this).addClass('col-md-3').removeClass('col-md-6');
+	$(this).siblings().addClass('col-md-3').removeClass('col-md-2');
 });
 
-/**
- * Section Two
- */
-two.addEventListener("mouseenter", () => {
-	two.classList.add("maximize");
-	one.classList.add("minimize");
-	three.classList.add("minimize");
-	four.classList.add("minimize");
-});
 
-two.addEventListener("mouseleave", () => {
-	two.classList.remove("maximize");
-	one.classList.remove("minimize");
-	three.classList.remove("minimize");
-	four.classList.remove("minimize");
-});
-
-/**
- * Section Three
- */
-three.addEventListener("mouseenter", () => {
-	three.classList.add("maximize");
-	one.classList.add("minimize");
-	two.classList.add("minimize");
-	four.classList.add("minimize");
-});
-
-three.addEventListener("mouseleave", () => {
-	three.classList.remove("maximize");
-	one.classList.remove("minimize");
-	two.classList.remove("minimize");
-	four.classList.remove("minimize");
-});
- /**
- * Section Four
- */
-
-four.addEventListener("mouseenter", () => {
-	four.classList.add("maximize");
-	one.classList.add("minimize");
-	two.classList.add("minimize");
-	three.classList.add("minimize");
-});
-
-four.addEventListener("mouseleave", () => {
-	four.classList.remove("maximize");
-	one.classList.remove("minimize");
-	two.classList.remove("minimize");
-	three.classList.remove("minimize");
-});

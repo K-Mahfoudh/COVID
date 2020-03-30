@@ -197,37 +197,36 @@ box-shadow: inset 7px 5px 35px 4px rgba(0,0,0,1);
 }
 
 /********************/
-
-@media only screen and (max-width: 801px){
-	.side-nav{
-		display: none;
-	}
-}
-
+/********************/
+/********************/
+/********************/
 /* Preventions */
-#prevent{
-	position: relative;
-	display: flex;
-	width: calc(100% - 100px);
-}
+/********************/
+/********************/
+/********************/
+/********************/
+
 
 #prevent .split{
 	position: relative;
-	width: 25%;
 	height: 100vh;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	transition: ease-in-out 1s;
 }
-#prevent .maximize{
-	width: 70%;
-	/*transform: rotate(360deg)*/
+#prevent .split::after{
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 0;
 }
-#prevent .minimize{
-	width: 10%;
-	transition-delay: .5s;
-}
+
 
 #prevent .split.one{
 	background-image: url('../images/dz-bg.png');
@@ -250,9 +249,6 @@ box-shadow: inset 7px 5px 35px 4px rgba(0,0,0,1);
 	font-weight:bold;
 	text-shadow: 4px 4px black;
 	color: #fff;
-	position: absolute;
-	top: 10%;
-	left: 50%;
 	transform: translate(-50%);
 	z-index: 1;
 }
@@ -268,4 +264,31 @@ box-shadow: inset 7px 5px 35px 4px rgba(0,0,0,1);
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%);
+	z-index: 1;
 }
+
+
+/********************/
+/********************/
+/********************/
+/********************/
+
+
+
+
+/********************/
+/********************/
+/**Media queries*******/
+/********************/
+/********************/
+
+@media only screen and (max-width: 801px){
+	.side-nav{
+		display: none;
+	}
+}
+
+/********************/
+/********************/
+/********************/
+/********************/
