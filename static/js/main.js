@@ -25,14 +25,14 @@ function ajaxCall(){
   		method: 'GET',
   		url: url,
   		success: function(data){
-  			total_dz.slideDown().text(data['column_1']) 
-  			total_world.text(data["Coronavirus Cases"]);
-  			active_dz.text(data['column_6']) ;
-  			active_world.text(data['World Active']) ;
-  			recovered_dz.text(data['column_5']) ;
-  			recovered_world.text(data['Recovered']) ;
-  			death_dz.text(data['column_3']) ;
-  			death_world.text(data['Deaths']) ;
+  			total_dz.text(data['column_1']).hide().fadeIn(1000); 
+  			total_world.text(data["Coronavirus Cases"]).hide().fadeIn(1000);
+  			active_dz.text(data['column_6']).hide().fadeIn(1000);
+  			active_world.text(data['World Active']).hide().fadeIn(1000);
+  			recovered_dz.text(data['column_5']).hide().fadeIn(1000);
+  			recovered_world.text(data['Recovered']).hide().fadeIn(1000);
+  			death_dz.text(data['column_3']).hide().fadeIn(1000);
+  			death_world.text(data['Deaths']).hide().fadeIn(1000);
   		},
   		error: function(error_data){
   			alert('error')
