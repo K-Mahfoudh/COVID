@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b62fba62-9a73-45d0-9353-d0b697ebd66e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar-small-size.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar-small-size.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/side-bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/side-bar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +48,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="537" column="28" selection-start-line="537" selection-start-column="28" selection-end-line="537" selection-end-column="28" />
+            <state relative-caret-position="305">
+              <caret line="548" lean-forward="true" selection-start-line="548" selection-end-line="548" />
             </state>
           </provider>
         </entry>
@@ -244,7 +239,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -252,8 +246,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32882273" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25358167" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32882273" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25358167" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -407,8 +401,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="537" column="28" selection-start-line="537" selection-start-column="28" selection-end-line="537" selection-end-column="28" />
+        <state relative-caret-position="305">
+          <caret line="548" lean-forward="true" selection-start-line="548" selection-end-line="548" />
         </state>
       </provider>
     </entry>
