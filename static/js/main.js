@@ -12,6 +12,8 @@ $(function() {
 
           $.scrollify({
             section : ".section",
+			 setHeights: true,
+			  touchScroll:true,
           });
         });
 
@@ -63,5 +65,3 @@ split_element.mouseleave(function(){
 	$(this).addClass('col-md-3').removeClass('col-md-6');
 	$(this).siblings().addClass('col-md-3').removeClass('col-md-2');
 });
-
-
