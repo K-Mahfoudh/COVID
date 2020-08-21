@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+    </head>
+    <body>
+        <section class="login-panel">
+          <div class="left-side"></div>
+            <div class="right-side">
+            <h1>Sign Up</h1>
+            <p>Sign up and get a free pressent</p>
+            <form id="user_form" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" id="username" placeholder="Name" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="password" name="password1" id="password1" placeholder="Password" required>
+                <input type="password" name="password2" id="password2" placeholder="Password-confirm" required>
+                <button id="submit" class="btn btn-info" value="Register">Register</button>
+            </form>
+          </div>
+        </section>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script >
+            $("#user_form").on('submit', function(e) {
+                e.preventDefault();
+                create_user();
+            });
+            function create_user() {
+                
+                var username = $('#username').val();
+                var email =  $('#email').val();
+                var password1 = $('#password1').val();
+                var password2 = $('#password2').val();
+                var csrfmiddlewaretoken = $('input[name=csrfmiddlewaretoken]').val()
+
+                var data ={
+                        username,
+                        email ,
+                        password1 ,
+                        password2,
+                        csrfmiddlewaretoken: csrfmiddlewaretoken
+                    };
+
+               $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1:8000/registration/',
+                    dataType: 'json',
+                    data: data,
+                    success: function(){
+                        window.location.replace('http://127.0.0.1:8000/home/')
+                    },
+                    error: function(err){
+                        console.log(err)
+                    },
+                   complete: function(){
+                        alert('done')
+                   }
+
+                })
+                return false;
+
+            }
+        </script>
+    </body>
+</html>

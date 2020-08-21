@@ -1,7 +1,6 @@
-
-
 function main(){
-
+	let jwt = null
+	console.log(jwt)
 	ajaxCall();
   	repeat = setInterval(ajaxCall,30000);
 
@@ -65,3 +64,27 @@ split_element.mouseleave(function(){
 	$(this).addClass('col-md-3').removeClass('col-md-6');
 	$(this).siblings().addClass('col-md-3').removeClass('col-md-2');
 });
+
+function create_user(){
+                alert('Hello world')
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1:8000/dj-rest-auth/registration/',
+                    dataType: 'json',
+                    data: {
+                        "username": $('#username').val(),
+                        "email": $('#email').val(),
+                        "password1": $('#password1').val(),
+                        "password2": $('#password2').val()
+                    },
+                    success: function(data){
+                        console.log(data)
+                        console.log('data successfuly sent')
+                    },
+                    error: function(err){
+                        console.log(err)
+                    }
+                })
+}
+
+

@@ -1,6 +1,11 @@
 
 {% extends 'base.html' %}
 {% block content %}
+    {% if request.user_agent.is_mobile %}
+        {% include 'navbar-small-size.html' %}
+    {% else %}
+        {% include 'side-bar.html' %}
+    {% endif %}
 	{% include 'header.html' %}
     {% include 'symptoms.html' %}
 	{% include 'world-stat.html' %}

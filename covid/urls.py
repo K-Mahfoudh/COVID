@@ -16,14 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from main.views import home_view,update_view
-from rest_framework import routers
+from main.views import home_view,update_view, registration_view, login_view, post_view, CustomLoginView
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home',home_view,name='home'),
-    path('',home_view,name='home'),
-    url(r'^update/', update_view)
+    path('home/',home_view, name='home'),
+    path('',home_view, name='home'),
+    path('register/', registration_view, name='register'),
+    path('login/', login_view, name='login'),
+    path('posts/', post_view, name='posts'),
+    path('api/login/',CustomLoginView.as_view(), name='home'),
+    url(r'^update/', update_view),
+    path('accounts/', include('allauth.urls')),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    url(r'^registration/', include('dj_rest_auth.registration.urls')),
 ]
 

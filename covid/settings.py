@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from datetime import timedelta
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -39,10 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_user_agents',
     'rest_framework',
-    'main'
+    'main',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 ]
+SITE_ID = 1
 
 CACHES = {
+
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
@@ -63,6 +74,7 @@ MIDDLEWARE = [
 
     
 ]
+
 
 TEMPLATE_CONTEXT_PROCESSORS = (
   "django.core.context_processors.request",
@@ -91,7 +103,45 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Django-rest-auth settings
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+ACCOUNT_USERNAME_MIN_LENGTH = 4
 WSGI_APPLICATION = 'covid.wsgi.application'
+
+# Email confirmation settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'covid19.website.dz@gmail.com'
+EMAIL_HOST_PASSWORD = 'is26121997'
+
+# JWT auth configuration
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    )
+}
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
+}
+
+JWT_AUTH_COOKIE = 'token-cookie'
+JWT_REFRESH_COOKIE = 'ref'
+REST_USE_JWT = True
+COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
 
 
 # Database
@@ -145,3 +195,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+

@@ -1,0 +1,115 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(69, 163, 251, 0.8),
+      rgba(161, 187, 217, 0.8)
+    ),
+    url("https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-panel {
+    width: 50%;
+    height: 400px;
+    background-color: #fff;
+}
+
+.login-panel div {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.left-side {
+    background:
+        linear-gradient(
+            120deg,
+            rgba(63, 94, 251, .3),
+            rgba(202, 211, 217, 0.8)
+         ),
+         url("https://images.unsplash.com/photo-1584521764592-48f33fe7e088?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    );
+    background-size: cover;
+}
+
+.right-side {
+    padding: 50px 25px;
+    box-sizing: border-box;
+}
+
+.right-side h1 {
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.right-side p {
+    font-size: 10px;
+    color: #888;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+}
+
+.right-side input {
+    margin: 10px 0;
+    padding: 2.5px 0;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #888;
+}
+
+input.submit-btn {
+    border: 2px solid #000;
+    border-radius: 15px;
+    width: 100px;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 5px;
+}
+input.submit-btn:hover {
+  background:
+    linear-gradient(
+      120deg,
+      rgba(63, 94, 251, 1),
+      rgba(106, 208, 217, 1)
+    );
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1100px) {
+  .login-panel {
+    width: 70%;
+    height: 400px;
+    background-color: #fff;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .login-panel {
+    width: 70%;
+    height: 500px;
+    background-color: #fff;
+  }
+  .login-panel div:first-of-type {
+    width: 100%;
+    height: 100px;
+  }
+  .login-panel div {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+*:focus {
+    outline: none;
+}
